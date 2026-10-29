@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d20">
+<title>STEM NATION | Think. Create. Inspire.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d20;
+    color: white;
+    line-height: 1.7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: #101831;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #24365d;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #38d9ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #38d9ff;
+}
+
+.hero {
+    min-height: 85vh;
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 80% 20%, #35216c, transparent 35%),
+      linear-gradient(135deg, #080d20, #142b50);
+}
+
+.hero small {
+    color: #38d9ff;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 9vw, 75px);
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.highlight {
+    color: #38d9ff;
+}
+
+.hero p {
+    max-width: 580px;
+    color: #c5d2e8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    background: linear-gradient(90deg, #168cff, #8b5cf6);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #38d9ff;
+}
+
+.intro {
+    color: #b9c6dc;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #121e39;
+    padding: 25px;
+    border: 1px solid #263d65;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #38d9ff;
+}
+
+.card h3 {
+    color: #38d9ff;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #b9c6dc;
+}
+
+.icon {
+    font-size: 35px;
+}
+
+.about {
+    background: #0e1830;
+}
+
+.media-box {
+    background: #121e39;
+    border: 2px dashed #42618e;
+    border-radius: 18px;
+    padding: 45px 20px;
+    text-align: center;
+    color: #b9c6dc;
+    margin-top: 20px;
+}
+
+.media-box strong {
+    color: #38d9ff;
+}
+
+.quote {
+    background: linear-gradient(120deg, #162e55, #382263);
+    text-align: center;
+    border-radius: 20px;
+    padding: 40px 25px;
+}
+
+.quote h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    background: #050916;
+    text-align: center;
+    padding: 25px;
+    color: #91a4c4;
+    border-top: 1px solid #24365d;
+}
+
+footer span {
+    color: #38d9ff;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 75px 7%;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">STEM NATION.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#explore">Explore</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <small>WELCOME TO MY DIGITAL WORLD</small>
+
+    <h1>
+        THINK BIG.<br>
+        CREATE <span class="highlight">MORE.</span><br>
+        INSPIRE.
+    </h1>
+
+    <p>
+        A world of technology, science, creativity,
+        knowledge and real-life experiences.
+        Welcome to STEM NATION.
+    </p>
+
+    <a href="#about" class="btn">DISCOVER MY WORLD →</a>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">About STEM NATION</h2>
+
+    <p class="intro">
+        More than a website. A place for ideas, learning,
+        creativity and personal growth.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">👨‍💻</div>
+            <h3>Technology</h3>
+            <p>Exploring digital skills, coding and innovation.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔬</div>
+            <h3>Science</h3>
+            <p>Discovering ideas that help us understand our world.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Creativity</h3>
+            <p>Sharing creative projects, designs and inspiration.</p>
+        </div>
+    </div>
+</section>
+
+<section id="explore">
+    <h2 class="section-title">Explore My World</h2>
+
+    <p class="intro">
+        Ideas, stories and experiences worth sharing.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>My Journey</h3>
+            <p>My experiences, lessons and personal growth.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💡</div>
+            <h3>Ideas & Innovation</h3>
+            <p>Interesting ideas, discoveries and future ambitions.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Inspiration</h3>
+            <p>Thoughts and messages to encourage positive change.</p>
+        </div>
+    </div>
+</section>
+
+<section id="media" class="about">
+    <h2 class="section-title">My Gallery</h2>
+
+    <p class="intro">
+        A home for my pictures, videos and creative projects.
+    </p>
+
+    <div class="media-box">
+        <div class="icon">📸 🎬</div>
+        <strong>MY PHOTOS & VIDEOS</strong>
+        <p>My personal gallery is coming soon.</p>
+    </div>
+</section>
+
+<section>
+    <div class="quote">
+        <h2>Dream. Learn. Build. Repeat.</h2>
+        <p>Your ideas today can shape your tomorrow.</p>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="intro">
+        Thank you for visiting STEM NATION.
+        Keep learning and keep creating.
+    </p>
+    <a href="#home" class="btn">BACK TO TOP ↑</a>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 <span>STEM NATION</span>. Built with creativity.</p>
+    <p>Think. Create. Inspire.</p>
+</footer>
+
+</body>
+</html>
