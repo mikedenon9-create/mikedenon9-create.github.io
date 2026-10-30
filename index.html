@@ -3,217 +3,328 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d20">
-<title>STEM NATION | Think. Create. Inspire.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061329">
+<meta name="description" content="STEM NATION - The world of Mike Wycliffe AKA STEM K.">
+<title>STEM NATION | Mike Wycliffe</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+:root {
+  --bg:#030914;
+  --navy:#061329;
+  --panel:#0b1d38;
+  --blue:#008cff;
+  --cyan:#36d9ff;
+  --white:#f4f8ff;
+  --muted:#a9bdd5;
 }
 
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html { scroll-behavior:smooth; }
+
 body {
-    font-family: Arial, sans-serif;
-    background: #080d20;
-    color: white;
-    line-height: 1.7;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 7%;
-    background: #101831;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-bottom: 1px solid #24365d;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(3,9,20,.97);
+  border-bottom:1px solid var(--blue);
+  padding:13px 5%;
+}
+
+.nav {
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
 .logo {
-    font-size: 23px;
-    font-weight: bold;
-    color: #38d9ff;
+  color:var(--cyan);
+  font-weight:900;
+  font-size:23px;
+  letter-spacing:2px;
+  text-shadow:0 0 12px var(--blue);
+}
+
+nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 14px;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:bold;
 }
 
-nav a:hover {
-    color: #38d9ff;
-}
+nav a:hover { color:var(--cyan); }
 
 .hero {
-    min-height: 85vh;
-    padding: 100px 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background:
-      radial-gradient(circle at 80% 20%, #35216c, transparent 35%),
-      linear-gradient(135deg, #080d20, #142b50);
+  min-height:530px;
+  padding:75px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(ellipse at center,#10477c 0%,transparent 60%),
+    linear-gradient(145deg,#061329,#030914);
 }
 
-.hero small {
-    color: #38d9ff;
-    letter-spacing: 4px;
-    font-weight: bold;
+.hero-inner { max-width:800px; }
+
+.avatar {
+  width:125px;
+  height:125px;
+  margin:0 auto 22px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#0057a8,#07142c);
+  border:3px solid var(--cyan);
+  box-shadow:0 0 18px var(--blue),0 0 40px #008cff55;
+  font-size:42px;
+  font-weight:900;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 9vw, 75px);
-    line-height: 1.15;
-    margin: 18px 0;
+  font-size:clamp(34px,7vw,65px);
+  line-height:1.2;
+  text-shadow:0 0 20px #008cff99;
 }
 
-.highlight {
-    color: #38d9ff;
+.hero h2 {
+  color:var(--cyan);
+  font-size:22px;
+  letter-spacing:3px;
 }
 
 .hero p {
-    max-width: 580px;
-    color: #c5d2e8;
-    margin-bottom: 30px;
+  color:var(--muted);
+  margin:18px auto;
+  max-width:650px;
+}
+
+.tagline {
+  color:var(--cyan);
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
 .btn {
-    display: inline-block;
-    width: fit-content;
-    background: linear-gradient(90deg, #168cff, #8b5cf6);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
+  display:inline-block;
+  padding:10px 22px;
+  margin:8px 4px;
+  background:#07315a;
+  border:1px solid var(--blue);
+  border-radius:30px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover {
+  background:var(--blue);
+  box-shadow:0 0 18px var(--blue);
+}
+
+.ticker {
+  overflow:hidden;
+  white-space:nowrap;
+  background:#06264a;
+  color:var(--cyan);
+  padding:12px 0;
+  border-block:1px solid var(--blue);
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.ticker span {
+  display:inline-block;
+  padding-left:100%;
+  animation:move 25s linear infinite;
+}
+
+@keyframes move {
+  to { transform:translateX(-100%); }
 }
 
 section {
-    padding: 75px 8%;
+  max-width:1200px;
+  margin:auto;
+  padding:60px 6%;
+  scroll-margin-top:85px;
 }
 
 .section-title {
-    font-size: 32px;
-    margin-bottom: 12px;
-    color: #38d9ff;
+  color:var(--cyan);
+  text-align:center;
+  font-size:28px;
+  margin-bottom:12px;
+  text-shadow:0 0 12px #008cff77;
 }
 
 .intro {
-    color: #b9c6dc;
-    margin-bottom: 30px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #121e39;
-    padding: 25px;
-    border: 1px solid #263d65;
-    border-radius: 18px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    border-color: #38d9ff;
-}
-
-.card h3 {
-    color: #38d9ff;
-    margin: 10px 0;
-}
-
-.card p {
-    color: #b9c6dc;
-}
-
-.icon {
-    font-size: 35px;
+  text-align:center;
+  color:var(--muted);
+  max-width:700px;
+  margin:0 auto 28px;
 }
 
 .about {
-    background: #0e1830;
+  background:var(--panel);
+  border:1px solid #14518a;
+  border-radius:15px;
+  padding:27px;
+  max-width:850px;
+  margin:auto;
+  box-shadow:0 0 18px #008cff18;
 }
 
-.media-box {
-    background: #121e39;
-    border: 2px dashed #42618e;
-    border-radius: 18px;
-    padding: 45px 20px;
-    text-align: center;
-    color: #b9c6dc;
-    margin-top: 20px;
+.about p { margin-bottom:10px; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:16px;
 }
 
-.media-box strong {
-    color: #38d9ff;
+.card {
+  background:var(--panel);
+  border:1px solid #164b7d;
+  border-radius:13px;
+  padding:20px;
+  text-align:center;
+  transition:.25s;
 }
 
-.quote {
-    background: linear-gradient(120deg, #162e55, #382263);
-    text-align: center;
-    border-radius: 20px;
-    padding: 40px 25px;
+.card:hover {
+  transform:translateY(-4px);
+  border-color:var(--cyan);
+  box-shadow:0 0 17px #008cff44;
 }
 
-.quote h2 {
-    font-size: 27px;
-    margin-bottom: 10px;
+.initial {
+  width:57px;
+  height:57px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#006bc5,#10254a);
+  border:1px solid var(--cyan);
+  color:white;
+  font-size:19px;
+  font-weight:bold;
 }
 
-.contact {
-    text-align: center;
+.card h3 { font-size:16px; }
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
 }
+
+.subject {
+  display:block;
+  color:var(--cyan);
+  font-size:13px;
+  margin-top:8px;
+}
+
+.subheading {
+  text-align:center;
+  color:var(--cyan);
+  margin:25px 0 17px;
+}
+
+.memory {
+  background:linear-gradient(135deg,#0b2c50,#07152b);
+  border:1px solid var(--blue);
+  border-radius:15px;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.memory strong { color:var(--cyan); }
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+
+.gallery-slot {
+  min-height:170px;
+  border:1px dashed var(--blue);
+  border-radius:13px;
+  background:linear-gradient(145deg,#102b4b,#071326);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:var(--muted);
+}
+
+.gallery-slot .symbol {
+  font-size:38px;
+  color:var(--cyan);
+}
+
+.gallery-slot strong { color:white; }
+
+.music-card { text-align:left; }
+
+.music-card .initial { margin-left:0; }
 
 footer {
-    background: #050916;
-    text-align: center;
-    padding: 25px;
-    color: #91a4c4;
-    border-top: 1px solid #24365d;
+  background:#020710;
+  text-align:center;
+  padding:32px 15px;
+  border-top:1px solid var(--blue);
+  color:var(--muted);
 }
 
-footer span {
-    color: #38d9ff;
+footer strong { color:var(--cyan); }
+
+@media(max-width:600px) {
+  header { padding:12px 3%; }
+  .nav { justify-content:center; }
+  nav { justify-content:center; gap:9px 12px; }
+  nav a { font-size:12px; }
+  .hero { min-height:470px; }
+  section { padding:45px 5%; }
+  .section-title { font-size:24px; }
 }
 
-@media (max-width: 600px) {
-    header {
-        padding: 15px 5%;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    nav {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    nav a {
-        margin: 0;
-    }
-
-    .hero {
-        min-height: 75vh;
-        padding: 75px 7%;
-    }
-
-    section {
-        padding: 55px 7%;
-    }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none !important;
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
 }
 </style>
 </head>
@@ -221,129 +332,240 @@ footer span {
 <body>
 
 <header>
-    <div class="logo">STEM NATION.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#explore">Explore</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
+  <div class="nav">
+    <a class="logo" href="#home">STEM NATION</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#dreams">Dreams</a>
+      <a href="#friends">Friends</a>
+      <a href="#teachers">Teachers</a>
+      <a href="#school">School</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#favourites">Favourites</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </div>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-    <small>WELCOME TO MY DIGITAL WORLD</small>
-
-    <h1>
-        THINK BIG.<br>
-        CREATE <span class="highlight">MORE.</span><br>
-        INSPIRE.
-    </h1>
-
-    <p>
-        A world of technology, science, creativity,
-        knowledge and real-life experiences.
-        Welcome to STEM NATION.
-    </p>
-
-    <a href="#about" class="btn">DISCOVER MY WORLD →</a>
+  <div class="hero-inner">
+    <div class="avatar">SK</div>
+    <p class="tagline">WELCOME TO MY WORLD</p>
+    <h1>MIKE WYCLIFFE</h1>
+    <h2>AKA STEM K.</h2>
+    <p>A world of dreams, creativity, friendship, technology and unforgettable memories.</p>
+    <p class="tagline">THINK BIG. CREATE MORE. INSPIRE.</p>
+    <a class="btn" href="#about">Explore My World</a>
+    <a class="btn" href="#contact">Connect With Me</a>
+  </div>
 </section>
 
-<section class="about" id="about">
-    <h2 class="section-title">About STEM NATION</h2>
+<div class="ticker">
+  <span>WELCOME TO STEM NATION ✦ THINK BIG ✦ DREAM BIG ✦ LOVE MY MOM ❤️ ✦ CREATE MORE ✦ INSPIRE ✦</span>
+</div>
 
-    <p class="intro">
-        More than a website. A place for ideas, learning,
-        creativity and personal growth.
-    </p>
+<section id="about">
+  <h2 class="section-title">ABOUT ME</h2>
+  <p class="intro">Meet the person behind STEM NATION.</p>
+  <div class="about">
+    <p>I'm a friendly and happy person with big dreams and a positive outlook on life. I believe life is about learning, making memories, meeting great people and enjoying every moment.</p>
+    <p>I'm passionate about technology, creativity, music and exploring new ideas. I love connecting with friends, sharing experiences and discovering what the world has to offer.</p>
+    <p>I may still be building my journey, but my dreams are bigger than my starting point. Welcome to my world — STEM NATION!</p>
+    <br>
+    <p><strong>Birthday:</strong> 31st May</p>
+    <p><strong>Country:</strong> Uganda 🇺🇬</p>
+    <p><strong>City:</strong> Kampala</p>
+    <p><strong>Personal motto:</strong> LOVE MY MOM ❤️</p>
+  </div>
+</section>
 
-    <div class="cards">
-        <div class="card">
-            <div class="icon">👨‍💻</div>
-            <h3>Technology</h3>
-            <p>Exploring digital skills, coding and innovation.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🔬</div>
-            <h3>Science</h3>
-            <p>Discovering ideas that help us understand our world.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Creativity</h3>
-            <p>Sharing creative projects, designs and inspiration.</p>
-        </div>
+<section id="dreams">
+  <h2 class="section-title">MY DREAMS & AMBITIONS</h2>
+  <p class="intro">My journey is still growing. These goals inspire me.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="initial">🎓</div>
+      <h3>Academic Excellence</h3>
+      <p>Keep learning and reaching higher levels of education.</p>
     </div>
-</section>
-
-<section id="explore">
-    <h2 class="section-title">Explore My World</h2>
-
-    <p class="intro">
-        Ideas, stories and experiences worth sharing.
-    </p>
-
-    <div class="cards">
-        <div class="card">
-            <div class="icon">📖</div>
-            <h3>My Journey</h3>
-            <p>My experiences, lessons and personal growth.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💡</div>
-            <h3>Ideas & Innovation</h3>
-            <p>Interesting ideas, discoveries and future ambitions.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌍</div>
-            <h3>Inspiration</h3>
-            <p>Thoughts and messages to encourage positive change.</p>
-        </div>
+    <div class="card">
+      <div class="initial">💻</div>
+      <h3>Technology & Innovation</h3>
+      <p>Explore computers, technology and creative digital projects.</p>
     </div>
-</section>
-
-<section id="media" class="about">
-    <h2 class="section-title">My Gallery</h2>
-
-    <p class="intro">
-        A home for my pictures, videos and creative projects.
-    </p>
-
-    <div class="media-box">
-        <div class="icon">📸 🎬</div>
-        <strong>MY PHOTOS & VIDEOS</strong>
-        <p>My personal gallery is coming soon.</p>
+    <div class="card">
+      <div class="initial">🏆</div>
+      <h3>Future Success</h3>
+      <p>Build a successful future through hard work and determination.</p>
     </div>
-</section>
-
-<section>
-    <div class="quote">
-        <h2>Dream. Learn. Build. Repeat.</h2>
-        <p>Your ideas today can shape your tomorrow.</p>
+    <div class="card">
+      <div class="initial">🌟</div>
+      <h3>PhD Ambition</h3>
+      <p>One of my big dreams is to earn a PhD.</p>
     </div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="intro">
-        Thank you for visiting STEM NATION.
-        Keep learning and keep creating.
-    </p>
-    <a href="#home" class="btn">BACK TO TOP ↑</a>
+<section id="friends">
+  <h2 class="section-title">MY PEOPLE ❤️</h2>
+  <p class="intro">Good people make life's journey more memorable.</p>
+
+  <h3 class="subheading">SCHOOL BRO CODE</h3>
+  <div class="grid">
+    <div class="card"><div class="initial">YA</div><h3>YASH ASHIRAF</h3></div>
+    <div class="card"><div class="initial">GR</div><h3>GRIPHINE ROY</h3></div>
+    <div class="card"><div class="initial">SE</div><h3>SSALI EMMA</h3></div>
+    <div class="card"><div class="initial">KB</div><h3>KARTEL BOSS</h3></div>
+    <div class="card"><div class="initial">EJ</div><h3>ENOCK JAYZ</h3></div>
+  </div>
+
+  <h3 class="subheading">CLOSE FRIENDS & LOVING NEIGHBOURS</h3>
+  <div class="grid">
+    <div class="card"><div class="initial">KE</div><h3>KALENDE ESTER</h3></div>
+    <div class="card"><div class="initial">MF</div><h3>MUHWANA FAVOUR</h3></div>
+    <div class="card"><div class="initial">ME</div><h3>MULONGO ELVIN</h3></div>
+    <div class="card"><div class="initial">T</div><h3>TORA</h3></div>
+    <div class="card"><div class="initial">G</div><h3>GESSA</h3></div>
+    <div class="card"><div class="initial">M</div><h3>MULEYI</h3></div>
+    <div class="card"><div class="initial">TL</div><h3>TOMMY LEE</h3></div>
+    <div class="card"><div class="initial">S</div><h3>SHABAN</h3></div>
+    <div class="card"><div class="initial">O</div><h3>OCM</h3></div>
+  </div>
+</section>
+
+<section id="teachers">
+  <h2 class="section-title">THE TEACHERS WHO INSPIRE MY JOURNEY</h2>
+  <p class="intro">With respect and appreciation to the teachers who shared knowledge during my O-Level journey.</p>
+  <div class="grid">
+    <div class="card"><div class="initial">KA</div><h3>Madam K. Agnes</h3><span class="subject">English</span></div>
+    <div class="card"><div class="initial">WR</div><h3>Mr W. Robert</h3><span class="subject">History</span></div>
+    <div class="card"><div class="initial">BM</div><h3>Madam B. Mary</h3><span class="subject">Geography</span></div>
+    <div class="card"><div class="initial">NA</div><h3>Mr N. Alex</h3><span class="subject">Biology</span></div>
+    <div class="card"><div class="initial">NR</div><h3>Madam N. Ritah</h3><span class="subject">ICT</span></div>
+    <div class="card"><div class="initial">N</div><h3>Mr N.</h3><span class="subject">Chemistry</span></div>
+    <div class="card"><div class="initial">A</div><h3>Mr Angua</h3><span class="subject">Physics</span></div>
+    <div class="card"><div class="initial">K</div><h3>Mr Kalega</h3><span class="subject">Mathematics</span></div>
+  </div>
+</section>
+
+<section id="school">
+  <h2 class="section-title">MY O-LEVEL MEMORIES</h2>
+  <p class="intro">A chapter of learning, friendship and unforgettable school experiences.</p>
+  <div class="memory">
+    <h2>O-LEVEL CLASS</h2>
+    <h3><strong>FAVOURITE STREAMS B & C</strong></h3>
+    <p>Every lesson, every challenge and every memory is part of the journey. Respect to everyone who made this chapter special!</p>
+  </div>
+</section>
+
+<section id="lifestyle">
+  <h2 class="section-title">MY LIFESTYLE & INTERESTS</h2>
+  <p class="intro">Things I enjoy and interests that keep my creativity alive.</p>
+  <div class="grid">
+    <div class="card"><div class="initial">🎮</div><h3>Gaming</h3><p>Games and digital adventures.</p></div>
+    <div class="card"><div class="initial">🎧</div><h3>Music</h3><p>Listening and exploring sounds.</p></div>
+    <div class="card"><div class="initial">🚶</div><h3>Walking</h3><p>Enjoying walks and fresh surroundings.</p></div>
+    <div class="card"><div class="initial">🌍</div><h3>Travelling</h3><p>Discovering new places.</p></div>
+    <div class="card"><div class="initial">🎬</div><h3>Movies</h3><p>Enjoying stories and films.</p></div>
+    <div class="card"><div class="initial">💻</div><h3>Technology</h3><p>Learning digital skills.</p></div>
+    <div class="card"><div class="initial">😴</div><h3>Relaxing</h3><p>Taking time to rest.</p></div>
+    <div class="card"><div class="initial">📸</div><h3>Creativity</h3><p>Photography, videos and design.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">MY PHOTO & VIDEO GALLERY</h2>
+  <p class="intro">A space for memories, special moments, adventures and creative videos.</p>
+  <div class="gallery">
+    <div class="gallery-slot">
+      <div class="symbol">📷</div>
+      <strong>PHOTO MEMORIES</strong>
+      <p>Your pictures will appear here.</p>
+    </div>
+    <div class="gallery-slot">
+      <div class="symbol">🎥</div>
+      <strong>VIDEO MOMENTS</strong>
+      <p>Your videos will appear here.</p>
+    </div>
+    <div class="gallery-slot">
+      <div class="symbol">🌍</div>
+      <strong>TRAVEL & ADVENTURES</strong>
+      <p>Places and experiences to remember.</p>
+    </div>
+    <div class="gallery-slot">
+      <div class="symbol">✨</div>
+      <strong>CREATIVE PROJECTS</strong>
+      <p>Your designs and creations.</p>
+    </div>
+  </div>
+  <p class="intro" style="margin-top:20px">
+    Gallery spaces are ready. Photos and videos can be added later.
+  </p>
+</section>
+
+<section id="favourites">
+  <h2 class="section-title">MY FAVOURITE MUSIC & MOVIES</h2>
+  <p class="intro">The sounds and stories I enjoy.</p>
+  <div class="grid">
+    <div class="card music-card">
+      <div class="initial">🎬</div>
+      <h3>MY FAVOURITE MOVIE</h3>
+      <p><strong>See No Evil, Hear No Evil</strong></p>
+      <p>A comedy favourite.</p>
+    </div>
+    <div class="card music-card">
+      <div class="initial">🎤</div>
+      <h3>MY FAVOURITE ARTISTS</h3>
+      <p>JUICE WRLD</p>
+      <p>POP SMOKE</p>
+      <p>KHANTRAST</p>
+      <p>KHAID</p>
+    </div>
+    <div class="card music-card">
+      <div class="initial">🎧</div>
+      <h3>MY FAVOURITE SONG</h3>
+      <p><strong>SKI</strong></p>
+      <p>By KHAID</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">CONNECT WITH STEM K.</h2>
+  <p class="intro">Follow my creative journey and discover more of STEM NATION.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="initial">♪</div>
+      <h3>TIKTOK</h3>
+      <p>STEM KAMUSTRA</p>
+      <a class="btn" href="https://www.tiktok.com/@stem.kamustra?_r=1&_t=ZS-9AyMZIxnRvo" target="_blank" rel="noopener noreferrer">Visit TikTok</a>
+    </div>
+    <div class="card">
+      <div class="initial">▶</div>
+      <h3>YOUTUBE</h3>
+      <p>MIKE DENON</p>
+      <a class="btn" href="https://youtube.com/@mikedenon-u3b?si=6Hndp2jPmZ8mli77" target="_blank" rel="noopener noreferrer">Visit YouTube</a>
+    </div>
+    <div class="card">
+      <div class="initial">@</div>
+      <h3>EMAIL</h3>
+      <p>Send a message</p>
+      <a class="btn" href="mailto:mikedenon9@gmail.com">Email Me</a>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer>
-    <p>© 2026 <span>STEM NATION</span>. Built with creativity.</p>
-    <p>Think. Create. Inspire.</p>
+  <p><strong>STEM NATION</strong></p>
+  <p>THINK BIG. CREATE MORE. INSPIRE.</p>
+  <p>Made with creativity by MIKE WYCLIFFE AKA STEM K.</p>
+  <p>LOVE MY MOM ❤️</p>
+  <p>© 2026 STEM NATION. All rights reserved.</p>
 </footer>
 
 </body>
